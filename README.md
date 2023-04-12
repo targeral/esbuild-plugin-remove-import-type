@@ -1,44 +1,38 @@
-# Your Package
+# esbuild-plugin-remove-import-type
 
-## Prerequisites
+remove import-type in third party dependencies
 
-1. [Node.js LTS](https://github.com/nodejs/Release)
-    * [Automatically call nvm use](https://github.com/nvm-sh/nvm#deeper-shell-integration)
+## Install
 
-## Get Started
+``` bash
+## npm
+npm i -D esbuild-plugin-remove-import-type
 
-按开发环境的要求，运行和调试项目
+## pnpm
+pnpm -i -D esbuild-plugin-remove-import-type
 
-运行和调试组件
-
-```
-pnpm run dev
-```
-
-运行测试用例
-
-```
-pnpm run test
+## yarn
+yarn add -D esbuild-plugin-remove-import-type
 ```
 
-按照社区规范和最佳实践，生成构建产物
+## Usage
 
+``` js
+const esbuild = require('esbuild')
+const { removeImportType } = require('esbuild-plugin-remove-import-type')
+
+esbuild.build({
+  entryPoints: ['lib/index.js'],
+  outdir: 'dist',
+  bundle: true,
+  plugins: [removeImportType()]
+});
 ```
-pnpm run build
-```
 
-继续创建更多项目要素
+## Examples
 
-```
-pnpm run new
-```
+``` bash
+cd examples && pnpm i
 
-其他
-
-```
-pnpm run lint         # 检查和修复所有代码
-pnpm run change       # 添加 changeset，用于发版时生成 changelog
-pnpm run bump         # 生成发版相关的修改，比如更新版本号、生成 changelog
-pnpm run release      # 根据 bump 自动修改和人工修改的发版要求，发布项目
-
+pnpm build
 ```

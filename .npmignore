@@ -35,3 +35,12 @@ tests/
 .idea/
 
 **/*/api/typings/auto-generated
+src/
+.git
+.changeset
+.husky
+.vscode
+examples
+modern.config.ts
+pnpm-lock.yaml
+
